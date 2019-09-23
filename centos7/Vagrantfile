@@ -4,6 +4,7 @@
 Vagrant.configure("2") do |config|
 
   config.vm.box = "zyz/centos7"
+  config.vm.box_check_update = false
 
   # config.vm.network "forwarded_port", guest: 80, host: 8080
   # config.vm.network "forwarded_port", guest: 80, host: 8080, host_ip: "127.0.0.1"
@@ -14,6 +15,7 @@ Vagrant.configure("2") do |config|
     vb.gui = false
     vb.cpus = 1
     vb.memory = "768"
+    config.vbguest.auto_update = false
   end
 
   config.vm.provision "shell", inline: <<-SHELL
