@@ -11,16 +11,27 @@ Vagrant.configure("2") do |config|
 
   # config.vm.synced_folder "../data", "/vagrant_data"
 
+  config.vm.hostname = "centos77.localhost"
+
   config.vm.provider "virtualbox" do |vb|
+    vb.name = "centos77vb"
     vb.gui = false
     vb.cpus = 1
-    vb.memory = "768"
+    vb.memory = "512"
+    vb.default_nic_type = "virtio"
+    vb.customize ['modifyvm', :id, '--vram', '16' ]
+    vb.customize ['modifyvm', :id, '--nicpromisc1', 'allow-all' ]
+    vb.customize ['modifyvm', :id, '--nicpromisc2', 'allow-all' ]
+    
     config.vbguest.auto_update = false
   end
 
-  config.vm.provision "shell", inline: <<-SHELL
-    echo "HELLO WORLD 2019!"
-  SHELL
+  config.vm.provider :vmware_desktop do |vmware|
+    vmware.gui = false
+    vmware.vmx["numvcpus"] = 1
+    vmware.vmx["memsize"] = 512
+    vmware.whitelist_verified = true
+  end
 
 end
 
