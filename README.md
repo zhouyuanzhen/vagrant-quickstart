@@ -2,22 +2,21 @@
 
 This is a vagrant environment quickstart project (which help you to quickstart your environment with Vagrant).
 
+----
+
 ## Before we start
 
-### Install the Virtualizer
+### Install Virtualizer
 
 You can choose below VM for your environment
 
-#### VirtualBox (Recommended)
+- VirtualBox (Recommended): **VirtualBox is a free and opensource virtualizer for x86 hardware.**
+  - Goto https://www.virtualbox.org/wiki/Downloads to download the right package of your OS.
+  - Install with it by double click ;)
 
-**VirtualBox is a free and opensource virtualizer for x86 hardware.**
+- VMware Fusion: **Please notice that both VMware Fusion and the Vagrant vmware_desktop are not free, you need get the licenses for them if you wanna to use Vagrant with VMware!**
 
-- Goto https://www.virtualbox.org/wiki/Downloads to download the right package of your OS.
-- Install with it by double click ;)
-
-#### VMware
-
-**Please notice that both VMware Fusion and the Vagrant vmware_desktop are not free, you need get the licenses for them if you wanna to use Vagrant with VMware!**
+----
 
 ## Example
 
