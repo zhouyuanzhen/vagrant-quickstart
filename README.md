@@ -1,5 +1,7 @@
 # Vagrant Environment QuickStart
 
+![GitHub stars](https://img.shields.io/github/stars/zhouyuanzhen/vagrant-quickstart.svg?style=flat&label=Star) ![GitHub stars](https://img.shields.io/github/forks/zhouyuanzhen/vagrant-quickstart.svg?style=flat&label=Fork) ![GitHub stars](https://img.shields.io/github/watchers/zhouyuanzhen/vagrant-quickstart.svg?style=flat&label=Watch) [![](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/zhouyuanzhen/vagrant-quickstart/pulls)
+
 This is a vagrant environment quickstart project (which help you to quickstart your environment with Vagrant).
 
 ----
