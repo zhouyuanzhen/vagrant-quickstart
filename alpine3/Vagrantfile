@@ -1,0 +1,54 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+Vagrant.configure("2") do |config|
+
+  # We are demonstrating in play with CentOS 8.0.1905 image with the vagrant environment
+  config.vm.box = "zyz/alpine"
+
+  # (Un comment below line if you don' t want the latest vagrant box)
+  config.vm.box_check_update = true
+
+  # By default it is "UTC"
+  if Vagrant.has_plugin?("vagrant-timezone")
+    config.timezone.value = "Asia/Shanghai"
+  end
+
+  # config.vm.network "forwarded_port", guest: 80, host: 8080
+  # config.vm.network "forwarded_port", guest: 80, host: 8080, host_ip: "127.0.0.1"
+
+  # Set the hostname here
+  config.vm.hostname = "alpine.localhost"
+
+  # (Set disable to false if you wanna enable the folder mounting)
+  config.vm.synced_folder '.', '/vagrant', disabled: true
+  config.vm.synced_folder "./data", "/data", disabled: true
+
+  config.ssh.shell = "sh"
+
+  # (Change settings here if you are using the virtualbox provider)
+  config.vm.provider "virtualbox" do |vb|
+    vb.name = "alpine310"
+    vb.gui = false
+    vb.cpus = 1
+    vb.memory = "512"
+    vb.linked_clone = false
+    vb.default_nic_type = "virtio"
+    vb.customize ['modifyvm', :id, '--vram', '16' ]
+    vb.customize ['modifyvm', :id, '--nicpromisc1', 'allow-all' ]
+    vb.customize ['modifyvm', :id, '--nicpromisc2', 'allow-all' ]
+    
+    config.vbguest.auto_update = false
+    # config.ssh.insert_key = true
+  end
+
+  # (Change settings here if you are using the vmware_desktop provider)
+  config.vm.provider :vmware_desktop do |vmware|
+    vmware.gui = false
+    vmware.vmx["numvcpus"] = 1
+    vmware.vmx["memsize"] = 512
+    vmware.whitelist_verified = true
+  end
+
+end
+
