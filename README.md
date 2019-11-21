@@ -2,20 +2,22 @@
 
 ![GitHub stars](https://img.shields.io/github/stars/zhouyuanzhen/vagrant-quickstart.svg?style=flat&label=Star) ![GitHub stars](https://img.shields.io/github/forks/zhouyuanzhen/vagrant-quickstart.svg?style=flat&label=Fork) ![GitHub stars](https://img.shields.io/github/watchers/zhouyuanzhen/vagrant-quickstart.svg?style=flat&label=Watch) [![](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/zhouyuanzhen/vagrant-quickstart/pulls)
 
-This is a vagrant environment quickstart project (which help you to quickstart your environment with Vagrant).
+- This is a vagrant environment quickstart project (which help you to quickstart your environment with Vagrant).
+- **使用 Vagrant 快速开始你的开发、测试环境**
 
-----
+Supported Vagrant Boxes Environment
 
 - [x] `alpine3`: Alpine Linux 3 Vagrant Env
 - [x] `centos7`: CentOS 7.7 Vagrant Env
 - [x] `centos8`: CentOS 8.0 Vagrant Env
 - [x] `centos7-docker`: CentOS 7.7 Docker Env
+- [ ] `centos7-python`: CentOS 7.7 Python Env
 
 ----
 
-## Before you start
+## Before You Start (准备工作)
 
-### Install the Virtualizer
+### Install the Virtualizer (安装虚拟机)
 
 ***You can choose below VM for your environment***
 
@@ -27,29 +29,28 @@ This is a vagrant environment quickstart project (which help you to quickstart y
 
 ----
 
-## Example for QuickStart
-
-### Go to the space you like
+## Example for QuickStart (快速开始)
 
 ```shell
+# [ Go to the space you like: ]
 cd centos7
-# OR
+# [ OR ]
 cd centos8
 ```
 
-### Play with Vagrant
+### Play with Vagrant / (玩转 Vagrant)
 
 ```shell
-# (启动虚机 / Run-up the VM box)
+# [ 启动虚机 / Run-up the VM box ]
 vagrant up
 
-# (连接虚机 / Login to the VM -- SSH)
+# [ 连接虚机 / Login to the VM -- SSH ]
 vagrant ssh
 
-# (停止虚机 / Halt and Stop the VM)
+# [ 停止虚机 / Halt and Stop the VM ]
 vagrant halt
 
-# (销毁虚机 / Terminate and destroy the VM )
+# [ 销毁虚机 / Terminate and destroy the VM  ]
 vagrant destroy -f
 ```
 
@@ -71,6 +72,7 @@ vagrant destroy -f
 #### QuickStart
 
 ```shell
+
 vagrant box add centos7.7_virtualbox_1.0.2.box --name zyz/centos7
 
 vagrant box add centos8_virtualbox_1.0.0.box --name zyz/centos8
