@@ -45,3 +45,26 @@ vagrant halt
 # (销毁虚机 / Terminate and destroy the VM )
 vagrant destroy -f
 ```
+
+## **My Pre-built Vagrant Box**:
+
+### Get the vagrant box from Vagrant Cloud
+
+- https://app.vagrantup.com/zyz/boxes/centos7
+- https://app.vagrantup.com/zyz/boxes/centos7-docker
+- https://app.vagrantup.com/zyz/boxes/centos7-python
+- https://app.vagrantup.com/zyz/boxes/centos8
+
+### Offline Vagrant boxes 百度网盘
+
+#### Download the boxes
+
+- [https://pan.baidu.com/s/1QReMyocRPPAqfrHd-cxLiA](https://pan.baidu.com/s/1QReMyocRPPAqfrHd-cxLiA)
+
+#### QuickStart
+
+```shell
+vagrant box add centos7.7_virtualbox_1.0.2.box --name zyz/centos7
+
+vagrant box add centos8_virtualbox_1.0.0.box --name zyz/centos8
+```

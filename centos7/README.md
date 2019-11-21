@@ -28,7 +28,7 @@ vagrant destroy -f
 
 ```sh
 # (Remove old version vagrant box)
-vagrant box remove zyz/centos7 --provider virtualbox --box-version 0.4.2
-vagrant box remove zyz/centos7 --provider vmware_desktop --box-version 0.4.2
+vagrant box remove zyz/centos7 --provider virtualbox --box-version 1.1.0
+vagrant box remove zyz/centos7 --provider vmware_desktop --box-version 1.1.0
 ```
 

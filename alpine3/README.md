@@ -32,3 +32,10 @@ vagrant box remove zyz/alpine --provider virtualbox --box-version 0.9.x
 vagrant box remove zyz/alpine --provider vmware_desktop --box-version 0.9.x
 ```
 
+## Example
+
+```
+apk add python3
+pip3 install flask
+```
+
