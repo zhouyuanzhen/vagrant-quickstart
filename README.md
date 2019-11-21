@@ -6,11 +6,18 @@ This is a vagrant environment quickstart project (which help you to quickstart y
 
 ----
 
-## Before we start
+- [x] `alpine3`: Alpine Linux 3 Vagrant Env
+- [x] `centos7`: CentOS 7.7 Vagrant Env
+- [x] `centos8`: CentOS 8.0 Vagrant Env
+- [x] `centos7-docker`: CentOS 7.7 Docker Env
 
-### Install Virtualizer
+----
 
-You can choose below VM for your environment
+## Before you start
+
+### Install the Virtualizer
+
+***You can choose below VM for your environment***
 
 - VirtualBox (Recommended): **VirtualBox is a free and opensource virtualizer for x86 hardware.**
   - Goto https://www.virtualbox.org/wiki/Downloads to download the right package of your OS.
@@ -20,7 +27,7 @@ You can choose below VM for your environment
 
 ----
 
-## Example
+## Example for QuickStart
 
 ### Go to the space you like
 
