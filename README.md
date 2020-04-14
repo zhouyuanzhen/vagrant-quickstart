@@ -9,11 +9,11 @@
 **Supported Vagrant Boxes Environment**
 
 - [x] `alpine3`: Alpine Linux 3 Vagrant Environment
-- [x] `centos7`: CentOS 7.7 Vagrant Environment
-- [x] `centos8`: CentOS 8.0 Vagrant Environment
-- [x] `centos7-docker`: CentOS 7.7 Docker Environment
-- [x] `centos7-python`: CentOS 7.7 Python Environment
-- [x] `centos7-elasticstack`: CentOS 7.7 ElasticStack Environment
+- [x] `centos7`: CentOS 7.7 Vagrant Environment Speed up with China Mirrors (Around 250MB)
+- [x] `centos8`: CentOS 8.0 Vagrant Environment Speed up with China Mirrors
+- [x] `centos7-docker`: CentOS 7.7 Docker Environment 
+- [x] `centos7-python`: CentOS 7.7 Python Environment with Jupyter Notebook (Around 300MB)
+- [x] `centos7-elasticstack`: CentOS 7.7 ElasticStack Environment (Less than 800MB)
 
 ----
 
@@ -80,8 +80,14 @@ After downloaded the offline vagrant boxes, you can add to your local environmen
 ```shell
 # Add VirtualBox CentOS 7 box:
 vagrant box add zyz/centos7 --provider virtualbox centos7.7_virtualbox_2.0.0.box
+vagrant box add zyz/centos7-elasticstack --provider virtualbox xxx.box
+vagrant box add zyz/centos7-python --provider virtualbox xxx.box
+vagrant box add zyz/centos7-docker --provider virtualbox xxx.box
 
-# Add VMware Desktop CentOS 7 box:
+# Add VMware Desktop CentOS 7 box (Unless you have VMware vagrant plugin like me :) ):
 vagrant box add zyz/centos7 --provider vmware_desktop centos7.7_vmware_2.0.0.box
+vagrant box add zyz/centos7-elasticstack --provider vmware_desktop xxx.box
+vagrant box add zyz/centos7-python --provider vmware_desktop xxx.box
+vagrant box add zyz/centos7-docker --provider vmware_desktop xxx.box
 
 ```
