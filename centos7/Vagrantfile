@@ -5,7 +5,7 @@ Vagrant.configure("2") do |config|
 
   config.vm.box = "zyz/centos7"
   # (Un comment below line if you don' t want the latest vagrant box)
-  # config.vm.box_check_update = false
+  config.vm.box_check_update = false
 
   if Vagrant.has_plugin?("vagrant-timezone")
     config.timezone.value = "Asia/Shanghai"
@@ -14,11 +14,15 @@ Vagrant.configure("2") do |config|
   # config.vm.network "forwarded_port", guest: 80, host: 8080
   # config.vm.network "forwarded_port", guest: 80, host: 8080, host_ip: "127.0.0.1"
 
-  config.vm.hostname = "centos7.localhost"
+  # Skip set hostname to Speed up!
+  # config.vm.hostname = "centos7.localhost"
 
   # (Set disable to false if you wanna enable the folder mounting)
   config.vm.synced_folder '.', '/vagrant', disabled: true
   config.vm.synced_folder "./data", "/data", disabled: true
+
+  config.ssh.shell = "bash -c 'BASH_ENV=/etc/profile exec bash'"
+  config.ssh.insert_key = false
 
   config.vm.provider "virtualbox" do |vb|
     vb.name = "centos7"
