@@ -8,11 +8,12 @@
 
 **Supported Vagrant Boxes Environment**
 
-- [x] `alpine3`: Alpine Linux 3 Vagrant Env
-- [x] `centos7`: CentOS 7.7 Vagrant Env
-- [x] `centos8`: CentOS 8.0 Vagrant Env
-- [x] `centos7-docker`: CentOS 7.7 Docker Env
-- [x] `centos7-python`: CentOS 7.7 Python Env
+- [x] `alpine3`: Alpine Linux 3 Vagrant Environment
+- [x] `centos7`: CentOS 7.7 Vagrant Environment
+- [x] `centos8`: CentOS 8.0 Vagrant Environment
+- [x] `centos7-docker`: CentOS 7.7 Docker Environment
+- [x] `centos7-python`: CentOS 7.7 Python Environment
+- [x] `centos7-elasticstack`: CentOS 7.7 ElasticStack Environment
 
 ----
 
