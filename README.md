@@ -12,7 +12,7 @@
 - [x] `centos7`: CentOS 7.7 Vagrant Env
 - [x] `centos8`: CentOS 8.0 Vagrant Env
 - [x] `centos7-docker`: CentOS 7.7 Docker Env
-- [ ] `centos7-python`: CentOS 7.7 Python Env
+- [x] `centos7-python`: CentOS 7.7 Python Env
 
 ----
 
@@ -68,14 +68,19 @@ vagrant destroy -f
 
 ### Offline Vagrant boxes 百度网盘的离线 Vagrant Boxes
 
-- Download the boxes
-  - [https://pan.baidu.com/s/1QReMyocRPPAqfrHd-cxLiA](https://pan.baidu.com/s/1QReMyocRPPAqfrHd-cxLiA)
+- Vagrant boxes:
+  - [https://pan.baidu.com/s/1_penG6IN_UvymuKndX3XPg](https://pan.baidu.com/s/1_penG6IN_UvymuKndX3XPg)
+  - 密码: `i84g`
 
-- QuickStart
+### Add Offline Boxes
+
+After downloaded the offline vagrant boxes, you can add to your local environment by:
 
 ```shell
+# Add VirtualBox CentOS 7 box:
+vagrant box add zyz/centos7 --provider virtualbox centos7.7_virtualbox_2.0.0.box
 
-vagrant box add centos7.7_virtualbox_1.0.2.box --name zyz/centos7
+# Add VMware Desktop CentOS 7 box:
+vagrant box add zyz/centos7 --provider vmware_desktop centos7.7_vmware_2.0.0.box
 
-vagrant box add centos8_virtualbox_1.0.0.box --name zyz/centos8
 ```
