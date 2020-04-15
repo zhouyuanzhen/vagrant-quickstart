@@ -1,4 +1,16 @@
+.idea
+.vscode
+
+
+.DS_Store
+
+
+.venv
+*.pyc
+__pycache__
+
+
 .vagrant
 
-.idea
 
+debug
