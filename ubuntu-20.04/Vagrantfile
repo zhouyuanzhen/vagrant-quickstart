@@ -1,0 +1,50 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+Vagrant.configure("2") do |config|
+
+    config.vm.box = "zyz/ubuntu-20.04"
+    # (Un comment below line if you don' t want the latest vagrant box)
+    config.vm.box_check_update = false
+
+    if Vagrant.has_plugin?("vagrant-timezone")
+        config.timezone.value = "Asia/Shanghai"
+    end
+
+    # config.vm.network "forwarded_port", guest: 80, host: 8080
+    # config.vm.network "forwarded_port", guest: 80, host: 8080, host_ip: "127.0.0.1"
+
+    # Skip set hostname to Speed up!
+    # config.vm.hostname = "ubuntu-20.04.localhost"
+
+    # (Set disable to false if you wanna enable the folder mounting)
+    config.vm.synced_folder '.', '/vagrant', disabled: false
+    config.vm.synced_folder "./data", "/data", disabled: true
+
+    config.ssh.shell = "bash -c 'BASH_ENV=/etc/profile exec bash'"
+    config.ssh.insert_key = false
+
+    config.vm.provider "virtualbox" do |vb|
+        vb.name = "ubuntu-2004"
+        vb.gui = false
+        vb.cpus = 1
+        vb.memory = "512"
+        vb.linked_clone = false
+        vb.default_nic_type = "virtio"
+        vb.customize ['modifyvm', :id, '--vram', '16' ]
+        vb.customize ['modifyvm', :id, '--nicpromisc1', 'allow-all' ]
+        vb.customize ['modifyvm', :id, '--nicpromisc2', 'allow-all' ]
+        
+        if Vagrant.has_plugin?("vagrant-vbguest")
+            config.vbguest.auto_update = true
+        end
+    end
+
+    config.vm.provider :vmware_desktop do |vmware|
+        vmware.gui = false
+        vmware.vmx["numvcpus"] = 1
+        vmware.vmx["memsize"] = 512
+        vmware.whitelist_verified = true
+    end
+
+end
