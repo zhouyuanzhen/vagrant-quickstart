@@ -3,44 +3,44 @@
 
 Vagrant.configure("2") do |config|
 
-  config.vm.box = "zyz/centos7-python"
-  # (Un comment below line if you don' t want the latest vagrant box)
-  config.vm.box_check_update = false
+    config.vm.box = "zyz/centos7-python"
+    # (Un comment below line if you don' t want the latest vagrant box)
+    config.vm.box_check_update = false
 
-  if Vagrant.has_plugin?("vagrant-timezone")
-    config.timezone.value = "Asia/Shanghai"
-  end
-
-  config.vm.network "forwarded_port", guest: 8888, host: 8888
-
-  config.vm.hostname = "centos7python"
-
-  # (Set disable to false if you wanna enable the folder mounting)
-  config.vm.synced_folder '.', '/vagrant', disabled: true
-  config.vm.synced_folder "./data", "/data", disabled: true
-
-  config.vm.provider "virtualbox" do |vb|
-    vb.name = "centos7python"
-    vb.gui = false
-    vb.cpus = 2
-    vb.memory = "2048"
-    vb.linked_clone = false
-    vb.default_nic_type = "virtio"
-    vb.customize ['modifyvm', :id, '--vram', '16' ]
-    vb.customize ['modifyvm', :id, '--nicpromisc1', 'allow-all' ]
-    vb.customize ['modifyvm', :id, '--nicpromisc2', 'allow-all' ]
-    
-    if Vagrant.has_plugin?("vagrant-vbguest")
-      config.vbguest.auto_update = true
+    if Vagrant.has_plugin?("vagrant-timezone")
+        config.timezone.value = "Asia/Shanghai"
     end
-  
-  end
 
-  config.vm.provider :vmware_desktop do |vmware|
-    vmware.gui = false
-    vmware.vmx["numvcpus"] = 2
-    vmware.vmx["memsize"] = 2048
-    vmware.whitelist_verified = true
-  end
+    config.vm.network "forwarded_port", guest: 8888, host: 8888
+
+    config.vm.hostname = "centos7python"
+
+    # (Set disable to false if you wanna enable the folder mounting)
+    config.vm.synced_folder '.', '/vagrant', disabled: true
+    config.vm.synced_folder "./data", "/data", disabled: true
+
+    config.vm.provider "virtualbox" do |vb|
+        vb.name = "centos7python"
+        vb.gui = false
+        vb.cpus = 2
+        vb.memory = "2048"
+        vb.linked_clone = false
+        vb.default_nic_type = "virtio"
+        vb.customize ['modifyvm', :id, '--vram', '16' ]
+        vb.customize ['modifyvm', :id, '--nicpromisc1', 'allow-all' ]
+        vb.customize ['modifyvm', :id, '--nicpromisc2', 'allow-all' ]
+        
+        if Vagrant.has_plugin?("vagrant-vbguest")
+        config.vbguest.auto_update = true
+        end
+    
+    end
+
+    config.vm.provider :vmware_desktop do |vmware|
+        vmware.gui = false
+        vmware.vmx["numvcpus"] = 2
+        vmware.vmx["memsize"] = 2048
+        vmware.whitelist_verified = true
+    end
 
 end
