@@ -41,6 +41,8 @@ Vagrant.configure("2") do |config|
     vmware.vmx["numvcpus"] = 2
     vmware.vmx["memsize"] = 3072
     vmware.whitelist_verified = true
+    # Workaround to skip the SSH "Connection refused. Retrying..." issue
+    vmware.ssh_info_public = true
   end
 
 end
