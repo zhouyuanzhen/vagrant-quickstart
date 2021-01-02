@@ -8,6 +8,9 @@ Free feel to start with it and enjoy it!
 
 ```sh
 ## Run up your Vagrant box with default provider
+export VAGRANT_DEFAULT_PROVIDER=virtualbox
+export VAGRANT_DEFAULT_PROVIDER=vmware_desktop
+
 vagrant up
 
 ## Run up vagrant box with your provider in case you have multi provider envs like me, I am rich :)
@@ -30,6 +33,8 @@ vagrant destroy -f
 # (Remove old version vagrant box)
 vagrant box remove zyz/alpine --provider virtualbox --box-version 0.9.x
 vagrant box remove zyz/alpine --provider vmware_desktop --box-version 0.9.x
+
+vagrant box add zyz/alpine --provider=virtualbox ~/code/gogs/dm/dm-devops/build/alpine-vb-3.12.3_v1.box
 ```
 
 ## Example
