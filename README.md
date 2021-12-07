@@ -91,3 +91,12 @@ vagrant box add zyz/centos7-python --provider vmware_desktop xxx.box
 vagrant box add zyz/centos7-docker --provider vmware_desktop xxx.box
 
 ```
+
+## FAQ
+
+- GET /api/vmnet giving up after 5 attempts
+
+```shell
+sudo launchctl stop com.vagrant.vagrant-vmware-utility
+sudo launchctl start com.vagrant.vagrant-vmware-utility
+```
