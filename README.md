@@ -14,6 +14,7 @@
 - [x] `centos7-docker`: CentOS 7.7 Docker Environment 
 - [x] `centos7-python`: CentOS 7.7 Python Environment with Jupyter Notebook (Around 300MB)
 - [x] `centos7-elasticstack`: CentOS 7.7 ElasticStack Environment (Less than 800MB)
+- [x] `rockylinux8`: Rocky Linux 8.5 (Around 500MB)
 
 ----
 
